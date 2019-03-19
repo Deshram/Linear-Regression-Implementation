@@ -5,13 +5,16 @@ import pandas as pd
 import numpy as np
 df = pd.read_csv("training.csv")
 date = pd.to_datetime(df["date"])
-x = [] # on x-axis there will be dates
-i = date.values
-for i in date:
-    x.append(100*i.month+i.day) # converting Date into integer
-print(x)
+
+# x = [] # on x-axis there will be dates
+# i = date.values
+# for i in date:
+#     x.append(100*i.month+i.day) # converting Date into integer
+
 y = df.close.values # on y-axis there will be adj_close values
-print(y) 
+print(y)
+x = list(range(1, len(y) + 1))
+print(x) 
 
 #mean of x and y
 mean_x = np.mean(x)

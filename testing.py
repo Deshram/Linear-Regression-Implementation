@@ -30,19 +30,23 @@ def step_gradient(m, c, x, y, n, learning_rate):
     
 df = pd.read_csv("testing.csv")
 date = pd.to_datetime(df["date"])
-x = [] # on x-axis there will be dates
-i = date.values
-for i in date:
-    x.append(100*i.month + i.day) # converting Date into integer
-print(x)
-y = df.close.values # on y-axis there will be adj_close values
-print(y) 
 
-m = 0.5189880105434824
-c = 1019.834484638208
+# x = [] # on x-axis there will be dates
+# i = date.values
+# for i in date:
+#     x.append(100*i.month + i.day) # converting Date into integer
+
+
+y = df.close.values # on y-axis there will be adj_close values
+print(y)
+x = list(range(1, len(y) + 1))
+print(x)
+
+m = 2.5748901098901116
+c = 1054.4645014245013
 n = len(x)
-learning_rate = 0.0001
-num_iterations = 1000
+learning_rate = 0.005
+num_iterations = 1500
 print(m,c,Rss(x, y, m, c, n))
 [m1, c1] = gradient_descent_runner(x, y, m, c, n, learning_rate, num_iterations)
 print(m1,c1,Rss(x, y, m1, c1, n))
