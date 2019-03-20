@@ -29,7 +29,7 @@ def step_gradient(m, c, x, y, n, learning_rate):
     return [new_m, new_c]
     
 df = pd.read_csv("testing.csv")
-date = pd.to_datetime(df["date"])
+#date = pd.to_datetime(df["date"])
 
 # x = [] # on x-axis there will be dates
 # i = date.values
@@ -42,8 +42,8 @@ print(y)
 x = list(range(1, len(y) + 1))
 print(x)
 
-m = 2.5748901098901116
-c = 1054.4645014245013
+m = -0.014901650456687916
+c = 1121.6498099247121
 n = len(x)
 learning_rate = 0.005
 num_iterations = 1500
@@ -61,3 +61,13 @@ for i in range(n):
     ss_r += (y[i] - y_pred) ** 2
 r2 = 1 - (ss_r/ss_t)
 print(r2)
+
+#plotting the one month prediction
+x1 = list(range(1,31))
+y_axis = []
+for i in range(len(x1)) : 
+    y_axis.append(m1 * x1[i] + c)
+fig = plt.figure()
+ax = fig.add_subplot(1,1,1)
+ax.plot(x1 , y_axis)
+plt.show()
