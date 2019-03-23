@@ -29,7 +29,8 @@ y_pred = []
 for i in range(len(x)):
     y_pred.append( m * x[i] + c )
 print(y_pred)
+print("Next day prediction will be near to ")
+print(y_pred[1])
 
 plt.plot(dates ,y_pred)
 plt.show()
-
