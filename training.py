@@ -8,7 +8,6 @@ print("1.Google\n2.Amazon\n3.Microsoft\n")
 comp = int(input("enter company no:"))
 if comp == 1:    
     df = pd.read_csv("GOOGL.csv")
-    #date = pd.to_datetime(df["date"])
 elif comp == 2 :
     df = pd.read_csv("AMZN.csv")
 elif comp == 3 :
@@ -47,10 +46,11 @@ y_pred = []
 for i in range(n):
     y_pred.append(m * x[i] + c)
 
-df['Date'] = pd.to_datetime(df.Date,format='%Y-%m-%d')
+# df['Date'] = pd.to_datetime(df.Date,format='%Y-%m-%d')
+df['Date'] = pd.to_datetime(df.Date,format='%d-%m-%Y')
 df.index = df['Date']
 
-plt.figure()
+plt.figure("Training Graph")
 plt.scatter(df.index ,df['Close'])
 plt.plot(df.index , y_pred)
 
