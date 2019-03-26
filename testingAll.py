@@ -1,6 +1,7 @@
 import datetime
 import csv
 import matplotlib.pyplot as plt 
+import matplotlib.lines as mlines 
 import pandas as pd  
 import numpy as np
 
@@ -37,18 +38,21 @@ if comp == 1:
     c = 1115.6280064807372
     learning_rate = 0.001
     num_iterations = 3000
+    comp_name = "Google"
 elif comp == 2 :
     df = pd.read_csv("AMZN_test.csv")
     m = 0.7903409986514652
     c = 1620.8507320555275
     learning_rate = 0.001
     num_iterations = 3000
+    comp_name = "Amazon"
 elif comp == 3 :
     df = pd.read_csv("MSFT_test.csv")
     m = 0.08662078595553525
     c = 94.85782102253692
     learning_rate = 0.001
     num_iterations = 3000
+    comp_name = "Microsoft"
 else :
     print("Enter valid no")
 
@@ -86,18 +90,14 @@ df['Date'] = pd.to_datetime(df.Date,format='%d-%m-%Y')
 df.index = df['Date']
 
 plt.figure("Testing Graph")
-plt.scatter(df.index ,df['Close'])
+close = plt.scatter(df.index ,df['Close'])
 plt.plot(df.index , y_trained, color = "red")
 plt.plot(df.index , y_optimised, color = "green")
-
+pre_opt = mlines.Line2D(df.index , y_trained, color = "red")
+post_opt = mlines.Line2D(df.index , y_optimised, color = "green")
+plt.xlabel('Dates')
+plt.ylabel('close price')
+plt.title(comp_name)
+plt.legend([close , pre_opt, post_opt],['Close prices', 'pre-optimised regression line', 'post-optimised regression line'])
 plt.show()
 
-#plotting the one month prediction
-# x1 = list(range(1,31))
-# y_axis = []
-# for i in range(len(x1)) : 
-#     y_axis.append(m1 * x1[i] + c)
-# fig = plt.figure()
-# ax = fig.add_subplot(1,1,1)
-# ax.plot(x1 , y_axis)
-# plt.show()
