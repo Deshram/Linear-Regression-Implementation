@@ -57,9 +57,7 @@ else :
     print("Enter valid no")
 
 y = df.Close.values # on y-axis there will be adj_close values
-print(y)
 x = list(range(1, len(y) + 1))
-print(x)
 
 n = len(x)
 print("Pre Optimization", end='\t')

@@ -20,9 +20,7 @@ else :
     print("Enter valid no") 
 
 y = df.Close.values # on y-axis there will be adj_close values
-print(y)
-x = list(range(1, len(y) + 1))
-print(x) 
+x = list(range(1, len(y) + 1)) 
 
 #mean of x and y
 mean_x = np.mean(x)
@@ -39,7 +37,7 @@ for i in range(n):
 m = numer / denom
 c = mean_y - ( m * mean_x)
 
-print(m,c)
+print("The values of m and c are : ",m,c)
 
 #plot the trained model
 y_pred = []

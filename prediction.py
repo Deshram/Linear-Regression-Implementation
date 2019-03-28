@@ -25,10 +25,8 @@ dates = []
 for i in range(0,30):
     b = a + datetime.timedelta(days = i)
     dates.append(b.strftime('%Y-%m-%d'))
-print(dates)
 
 x = list(range(1,31))
-print(x)
 
 y_pred = []
 for i in range(len(x)):
