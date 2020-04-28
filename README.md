@@ -12,5 +12,10 @@ as Support Vector Machine, Logistic Regression etc.
 
 ## Outputs
  ## Training graph
- ![training](https://github.com/Deshram/Stock_Predictor/training.png)
+ ![training](https://github.com/Deshram/Stock_Predictor/blob/master/training.PNG)
  
+ ## Testing graph
+ ![testing](https://github.com/Deshram/Stock_Predictor/blob/master/testing.PNG)
+ 
+ ## Prediction
+ ![prediction](https://github.com/Deshram/Stock_Predictor/blob/master/prediction.PNG)
