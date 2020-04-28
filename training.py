@@ -17,7 +17,7 @@ elif comp == 3 :
     df = pd.read_csv("MSFT.csv")
     comp_name = "Microsoft" 
 else :
-    print("Enter valid no") 
+    print("Enter valid no")
 
 y = df.Close.values # on y-axis there will be adj_close values
 x = list(range(1, len(y) + 1)) 
