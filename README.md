@@ -1,5 +1,5 @@
 # Stock_Predictor
-In this project, prediction of stock prices of three companies i.e Google, Microsoft and
+This is a toy project where we implemented a simple version of Linear regression to predict stock prices of three companies i.e Google, Microsoft and
 Amazon is done with accuracy of 74% with the training dataset of 200 days ranging from
 19/3/2018 to 31/12/2018 and with a testing dataset of further 50 days.
 
